@@ -1,0 +1,159 @@
+/************************************************ General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+* {
+    font-family: 'Inria Sans', sans-serif;
+}
+
+p{
+    color: white;
+}
+
+/************************************************ Header */
+header{
+    text-align: center;
+    background-color: white;
+    margin: 0;
+}
+
+header img{
+    width: 370px;
+    height: 90px;
+    margin: 1rem 0rem;
+}
+
+header p{
+    background-color: #5271FF;
+    padding: 0.3rem 0rem;
+}
+
+/************************************************ Main */
+
+.portada{
+    width: 100%;
+    height: auto;
+}
+
+.navbar1, .navbar2{
+    display: flex;
+    ul{
+        list-style-type: none;
+    }
+    li{
+        float: left;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.navbar1{
+    background-color: #5271FF;
+    padding: 1.25rem 0rem;
+    a{
+        margin: 0.75rem 0rem;
+    }
+    img{
+        width: 40px;
+        height: 42px;
+        margin: 0rem 0.5rem 0rem 1rem;
+    }
+}
+
+.home, .search, .login, .favorite, .cart{
+    display: flex;
+}
+
+.favorite img{
+    width: 30px;
+    height: 42;
+}
+
+.search input{
+    margin-top: 0.1rem;
+    margin-left: 25rem;
+    width: 500px;
+    height: 35px;
+}
+
+.search img{
+    width: 30px;
+    height: 30px;
+    margin: 0.25rem 0rem 0rem 0.35rem;
+}
+
+.navbar2{
+    background-color: #375cff;
+    padding: 0.75rem 0rem;
+    justify-content: center;
+    li{
+        margin-right: 3rem;
+    }
+}
+
+h1{
+    text-align: center;
+    padding-top: 4rem;
+}
+
+/************************************************ Footer */
+
+.foot{
+    width: 100%;
+    display: flex;
+    background-color: #5271FF;
+    color: white;
+    font-size: 1rem;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.image{
+    margin: 1.2rem 0rem;
+}
+
+.fc, .ig, .mail, .msj{
+    display: flex;
+}
+
+.ig img{
+    margin-right: 2px;
+}
+.mail img{
+    margin-left: 22px;
+}
+
+.seguinos{
+    margin: 15px 0px 0px 25px;
+}
+
+.comunicate{
+    margin: 15px 25px 0px 0px;
+    img{
+        margin-right: 2px;
+    }
+}
+
+.cp{
+    padding-left: 21px;
+}
+
+.fc p, .ig p, .mail p, .msj p{
+    margin-top: 4px;
+}
