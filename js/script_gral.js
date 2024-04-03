@@ -179,6 +179,7 @@ function comprarProducto(index) {
     cart.push(cartItem)
     let cartJSON = JSON.stringify(cart)
     localStorage.setItem("cart", cartJSON)
+    alert("El producto se añadio al carrito.")
 }
 
 function agregarFavorito(index) {
@@ -188,6 +189,7 @@ function agregarFavorito(index) {
     fav.push(favItem)
     let favJSON = JSON.stringify(fav)
     localStorage.setItem("fav", favJSON)
+    alert("El producto se añadio a favoritos. \n(Por ahora unicamente visible en localstorage.)")
 }
 
 const botonComprar = document.querySelectorAll(".btn-comp")
