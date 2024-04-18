@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Benjamin Berardo Mazzalay">
+    <meta name="copyright" content="Berardo S.A.S">
     <title>Berardost - Teclados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/Logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
@@ -13,11 +19,11 @@
             <ul>
                 <li class="home">
                     <img src="../assets/home.png" alt="">
-                    <a href="https://bonya29.github.io/49695-Proyecto_Desarrollo_Web_Coderhouse-Berardost/">Pagina principal - Nuestra Empresa</a>
+                    <a href="https://berardost.netlify.app/" target="_blank">Conoce Nuestra Empresa</a>
                 </li>
                 <li class="home2">
                     <img src="../assets/market.png" alt="">
-                    <a href="../index.html">Inicio Tienda</a>
+                    <a href="../index.html">Inicio</a>
                 </li>
                 <li class="search">
                     <input type="search" placeholder="¿Buscas algo en particular?">
@@ -25,11 +31,11 @@
                 </li>
                 <li class="login">
                     <img src="../assets/login.png" alt="">
-                    <a href="login.html">Iniciar Sesión</a>
+                    <a href="login.html">Iniciar/Cerrar Sesión</a>
                 </li>
                 <li class="favorite">
                     <img src="../assets/favorite.png" alt="">
-                    <a href="#">Favoritos</a>
+                    <a href="favoritos.html">Favoritos</a>
                 </li>
                 <li class="cart">
                     <img src="../assets/cart.png" alt="">
@@ -40,11 +46,16 @@
     </header>
 
     <main>
-        <h1>Proximamente</h1>
+        <h1>Favoritos</h1>
+        <div class="tabla">
+            <h4 class="prod-name">Producto</h4>
+            <h4 class="precio">Precio</h4>
+        </div>
+        <div id="favoritos" class="favoritos"></div>
     </main>
 
     <footer>
-        <section class="foot">
+        <section class="foot" style="position: fixed; bottom: 0;">
             <div class="seguinos">
                 <p>Seguinos en Nuestras Redes</p>
                 <div class="fc">
@@ -75,4 +86,5 @@
         </section>
     </footer>
 </body>
+<script src="../js/fav.js"></script>
 </html>

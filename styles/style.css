@@ -25,6 +25,7 @@ header img{
 }
 
 header p{
+    font-size: 1.15rem;
     background-color: #5271FF;
     padding: 0.3rem 0rem;
 }
@@ -44,6 +45,7 @@ header p{
         float: left;
     }
     a{
+        font-size: 1.15rem;
         color: white;
         text-decoration: none;
         &:hover{
@@ -56,7 +58,7 @@ header p{
     background-color: #5271FF;
     padding: 1.25rem 0rem;
     a{
-        margin: 0.75rem 0rem;
+        margin: 0.50rem 0rem;
     }
     img{
         width: 40px;
@@ -70,7 +72,7 @@ header p{
 }
 
 .home{
-    margin-right: 15rem;
+    margin-right: 21rem;
 }
 
 .favorite img{
@@ -105,10 +107,10 @@ header p{
 /************************************************ Main */
 
 h1{
+    font-size: 4rem;
     color: #5271FF;
     text-align: center;
     padding: 2rem 0rem 3rem 0rem;
-    font-size: 3rem;
 }
 
 .card{
@@ -128,6 +130,9 @@ h1{
     }
     h2, h3, button{
         margin-bottom: 0.5rem;
+    }
+    h3 {
+        font-size: 1.30rem;
     }
 }
 
@@ -227,7 +232,7 @@ margin-left: 5rem;
     font-size: 1rem;
 }
 
-.btn-comp, .btn-fav, .btn-log-reg, .btn-login, .btn-login-register, .btn-comprar{
+.btn-comp, .btn-fav, .btn-log-reg, .btn-login, .btn-login-register, .btn-comprar, .btn-add, .btn-cant{
     &:hover{
         cursor: pointer;
         background-color: #375cff;
@@ -242,6 +247,14 @@ margin-left: 5rem;
     align-items: center;
 }
 
+.favoritos {
+    margin-left: 11.65rem;
+}
+
+.carrito {
+    margin-left: 2.75rem;
+}
+
 .tabla{
     display: flex;
     justify-content: center;
@@ -252,22 +265,62 @@ margin-left: 5rem;
 }
 
 .prod-name{
-    width: 400px;
+    width: 525px;
+}
+
+.cant {
+    width: 100px;
 }
 
 .precio {
     width: 100px;
 }
 
-.ord, .prod-name, .precio{
-    margin-bottom: 0.5rem;
+.btn-add {
+    background-color: #5271FF;
+    color: white;
+    margin: 0rem 0.5rem 0.5rem 0rem;
+    padding: 0.20rem 0.75rem;
+    border-radius: 0.35rem;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-delete {
+    background-color: #ff5252;
+    color: white;
+    margin: 0rem 0.5rem 0.5rem 0rem;
+    padding: 0.20rem 0.75rem;
+    border-radius: 0.35rem;
+    border: none;
+    font-size: 1rem;
+    &:hover{
+        cursor: pointer;
+        background-color: #ff0000;
+        transition: 300ms;
+    }
+}
+
+.btn-cant {
+    background-color: #5271FF;
+    color: white;
+    padding: 0.15rem 0.35rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1rem;
+}
+
+.ord, .prod-name, .cant, .precio{
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .total{
+    font-size: 1.25rem;
     text-align: center;
 }
 
-.envio, .pago {
+.envio, .pago, .destinatario {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -280,27 +333,19 @@ margin-left: 5rem;
         margin-bottom: 1rem;
         border: 1px solid gray;
     }
-}
-
-.envio {
     h4 {
+        font-size: 1.25rem;
         margin: 1rem 0rem 0.5rem 0rem;
+    }
+    p{
+        margin-bottom: 1rem; 
     }
 }
 
-.pago {
-    h4 {
-        margin: 1rem 0rem 0.5rem 0rem;
+.check input {
+        width: 15px !important;
+        height: 15px !important;
     }
-
-}
-
-.btn-comprar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
 /************************************************ Footer */
 

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Benjamin Berardo Mazzalay">
+    <meta name="copyright" content="Berardo S.A.S">
     <title>Berardost - Teclados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/Logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
@@ -13,11 +19,11 @@
             <ul>
                 <li class="home">
                     <img src="../assets/home.png" alt="">
-                    <a href="https://bonya29.github.io/49695-Proyecto_Desarrollo_Web_Coderhouse-Berardost/">Pagina principal - Nuestra Empresa</a>
+                    <a href="https://berardost.netlify.app/" target="_blank">Conoce Nuestra Empresa</a>
                 </li>
                 <li class="home2">
                     <img src="../assets/market.png" alt="">
-                    <a href="../index.html">Inicio Tienda</a>
+                    <a href="../index.html">Inicio</a>
                 </li>
                 <li class="search">
                     <input type="search" placeholder="¿Buscas algo en particular?">
@@ -25,7 +31,7 @@
                 </li>
                 <li class="login">
                     <img src="../assets/login.png" alt="">
-                    <a href="login.html">Iniciar Sesión</a>
+                    <a href="login.html">Iniciar/Cerrar Sesión</a>
                 </li>
                 <li class="favorite">
                     <img src="../assets/favorite.png" alt="">
@@ -33,7 +39,7 @@
                 </li>
                 <li class="cart">
                     <img src="../assets/cart.png" alt="">
-                    <a href="#">Carrito</a>
+                    <a href="cart.html">Carrito</a>
                 </li>
             </ul>
         </nav>
@@ -44,8 +50,8 @@
         <div class="tabla">
             <h4 class="ord">Prod N°</h4>
             <h4 class="prod-name">Producto</h4>
+            <h4 class="cant">Cantidad</h4>
             <h4 class="precio">Precio</h4>
-            <h4></h4>
         </div>
         <div id="carrito" class="carrito"></div>
         <div id="total" class="total"></div>
@@ -62,6 +68,18 @@
             <input id="num" type="number" placeholder="Numero de la Tarjeta">
             <input id="exp" type="number" placeholder="Fecha de Expiración">
             <input id="ccv" type="number" placeholder="CCV">
+        </div>
+        <div class="destinatario">
+            <h4>Datos del Destinatario (Opcional)</h4>
+            <p>En caso de no llenar estos campos el paquete ira dirijido al dueño de la cuenta.</p>
+            <input id="tit" type="text" placeholder="Nombre y Apellido">
+            <input id="num" type="number" placeholder="Documento">
+            <input id="num" type="number" placeholder="Numero de Telefono">
+            <div class="check">
+                <input type="checkbox" class="check">
+                <span>Cualquier persona puede recibir mi paquete con su documento.</span>
+                <p>(Al seleccionar esta opción, no nos haremos cargo si su paquete es robado).</p>
+            </div>
             <button id="btn-comprar" class="btn-comprar">Comprar</button>
         </div>
     </main>

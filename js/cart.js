@@ -10,7 +10,13 @@ function cargarCarrito() {
         <div class="tabla">
             <span class="ord">${index + 1}</span>
             <span class="prod-name">${cartprod.Categoria} ${cartprod.Fabricante} ${cartprod.Modelo}</span>
+            <div class="cant">
+                <button class="btn-cant">+</button>
+                <span>1</span>
+                <button class="btn-cant">-</button>
+            </div>
             <span class="precio">$${cartprod.Precio}</span>
+            <button class="btn-delete">✖</button>
         </div>`
     })
 
