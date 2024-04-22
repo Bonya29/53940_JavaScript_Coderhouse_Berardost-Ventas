@@ -232,7 +232,7 @@ margin-left: 5rem;
     font-size: 1rem;
 }
 
-.btn-comp, .btn-fav, .btn-log-reg, .btn-login, .btn-login-register, .btn-comprar, .btn-add, .btn-cant{
+.btn-comp, .btn-fav, .btn-log-reg, .btn-login, .btn-login-register, .btn-comprar, .btn-add, .btn-sumar, .btn-restar{
     &:hover{
         cursor: pointer;
         background-color: #375cff;
@@ -301,7 +301,7 @@ margin-left: 5rem;
     }
 }
 
-.btn-cant {
+.btn-sumar, .btn-restar {
     background-color: #5271FF;
     color: white;
     padding: 0.15rem 0.35rem;

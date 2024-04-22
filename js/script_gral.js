@@ -174,8 +174,8 @@ if (document.getElementById("prod-cont")) {
 
 function agregarCarrito(index) {
     const producto = productos[index]
-    const {Categoria, Fabricante, Modelo, Precio} = producto
-    const cartItem = {Categoria, Fabricante, Modelo, Precio}
+    const {Categoria, Fabricante, Modelo, Precio, Cantidad} = producto
+    const cartItem = {Categoria, Fabricante, Modelo, Precio, Cantidad}
     cart.push(cartItem)
     let cartJSON = JSON.stringify(cart)
     localStorage.setItem("cart", cartJSON)
@@ -184,8 +184,8 @@ function agregarCarrito(index) {
 
 function agregarFavorito(index) {
     const producto = productos[index]
-    const {Categoria, Fabricante, Modelo, Precio} = producto
-    const favItem = {Categoria, Fabricante, Modelo, Precio} 
+    const {Categoria, Fabricante, Modelo, Precio, Cantidad} = producto
+    const favItem = {Categoria, Fabricante, Modelo, Precio, Cantidad} 
     fav.push(favItem)
     let favJSON = JSON.stringify(fav)
     localStorage.setItem("fav", favJSON)

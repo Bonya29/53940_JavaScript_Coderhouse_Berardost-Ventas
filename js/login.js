@@ -15,7 +15,7 @@ function iniciarSesion() {
             <a href="">Volver Atras</a>
         </div>
         <div class="login-register" style="flex-direction: column;">
-            <input type="text" placeholder="Nombre" id="login-name">
+            <input type="text" placeholder="Nombre y Apellido" id="login-name">
             <input type="password" placeholder="Contraseña" id="login-pass">
             <button id="login" class="btn-login-register">Iniciar Sesión</button>
         </div>`
@@ -34,12 +34,12 @@ function registrarse() {
             <a href="">Volver Atras</a>
         </div>
         <div class="login-register" style="flex-direction: column;">
-            <input type="text" placeholder="Nombre" id="reg-name">
-            <input type="email" placeholder="Email" id="reg-email">
-            <input type="tel" placeholder="Telefono" id="reg-tel">
-            <input type="number" placeholder="Año de Nacimiento" id="reg-byear">
-            <input type="number" placeholder="Documento" id="reg-document">
-            <input type="text" placeholder="Crear Contraseña" id="reg-pass">
+            <input type="text" placeholder="Nombre y Apellido*" id="reg-name">
+            <input type="email" placeholder="Email*" id="reg-email">
+            <input type="tel" placeholder="Telefono (Opcional)" id="reg-tel">
+            <input type="number" placeholder="Año de Nacimiento*" id="reg-byear">
+            <input type="number" placeholder="Documento*" id="reg-document">
+            <input type="text" placeholder="Crear Contraseña*" id="reg-pass">
             <button id="register" class="btn-login-register">Crear Cuenta</button>
         </div>`
 
@@ -78,9 +78,10 @@ function guardarDatos() {
     const regBirthYear = document.getElementById("reg-byear").value
     const regDocument = document.getElementById("reg-document").value
     const regPassword = document.getElementById("reg-pass").value
-
     let verification = parseInt(regBirthYear)
-    if (2024 - verification >= 18) {
+    if (!regUser || !regEmail || !regBirthYear || !regDocument || !regPassword) {
+        alert("Completa todos los campos marcados con *")
+    } else if (2024 - verification >= 18) {
         let usuarios = []
         let datos = {Nombre: regUser, Email: regEmail, Telefono: regTelephone, Nacimiento: verification, Documento: regDocument, Contraseña: regPassword}
         usuarios.push(datos)
@@ -96,7 +97,7 @@ function guardarDatos() {
         document.getElementById("reg-byear").value = ""
         document.getElementById("reg-document").value = ""
         document.getElementById("reg-pass").value = ""
-    }
+    }        
 }
 
 function validarDatos() {
