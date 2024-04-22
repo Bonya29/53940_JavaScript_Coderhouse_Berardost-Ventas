@@ -1,6 +1,5 @@
 const cartprod = JSON.parse(localStorage.getItem("cart")) || []
 let sesionIniciadaLS = localStorage.getItem("sesionIniciada")
-console.log(sesionIniciadaLS)
 
 function cargarCarrito() {
     const carrito = document.getElementById("carrito")
@@ -50,7 +49,12 @@ function cargarCarrito() {
         boton.addEventListener("click", () => {
             const index = parseInt(boton.getAttribute("data-index"))
             if(cartprod[index].Cantidad === 1) {
-                alert("Cantidad minima alcanzadoa")
+                Toastify({
+                    text: "Cantidad minima alcanzada",
+                    duration: 2000,
+                    gravity: "bottom",
+                    stopOnFocus: false
+                    }).showToast();
             } else {
                 cartprod[index].Cantidad--
                 localStorage.setItem("cart", JSON.stringify(cartprod))
@@ -71,21 +75,45 @@ function realizarCompra() {
     const ccv = document.getElementById("ccv").value
 
     if (cartprod.length === 0) {
-        alert("Tu carrito esta vacio. \nAñade por lo menos un producto al carrito para poder realizar una compra.")
+        Swal.fire({
+            title: "Tu carrito esta vacio.",
+            text: "Añade por lo menos un producto al carrito para poder realizar una compra.",
+            icon: "warning"
+        })
     } else if (!prov || !ciu || !cp || !dir || !tit || !num || !exp || !ccv) {
-        alert("Por favor, completa todos los campos obligatorios para realizar la compra.")
+        Swal.fire({
+            title: "Faltan Datos.",
+            text: "Completa todos los campos obligatorios para realizar la compra.",
+            icon: "warning"
+        })
     } else if (sesionIniciadaLS === "false") {
-        alert("Debes iniciar sesión para realizar la compra")
+        Swal.fire({
+            title: "Inicia Sesión.",
+            text: "Debes iniciar sesión para realizar la compra.",
+            icon: "warning"
+        })
     } else {
-        alert("Compra realizada, muchas gracias.\nEn los proximos 2 dias habiles enviaremos tu pedido al destino que nos indicaste. \nPor cualquier inconveniente con la compra puedes contactarte con nosotros en nuestra pagina principal, en el apartado 'Contactanos'")
-        localStorage.removeItem("cart")
+        Swal.fire({
+            title: "Compra realizada, muchas gracias.",
+            text: "En las proximas 48hs enviaremos tu pedido. Por cualquier inconveniente con la compra puedes contactarte con nosotros en nuestra pagina principal, en el apartado 'Contactanos'",
+            icon: "success"
+        })
+        .then(() => {
+            localStorage.removeItem("cart")
         location.reload()
+        })
     }
 }
 
 function eliminarCarrito(index) {
     cartprod.splice(index, 1)
     localStorage.setItem("cart", JSON.stringify(cartprod))
+    Toastify({
+        text: "Producto Eliminado",
+        duration: 2000,
+        gravity: "bottom",
+        stopOnFocus: false
+        }).showToast();
     cargarCarrito()
 }
 

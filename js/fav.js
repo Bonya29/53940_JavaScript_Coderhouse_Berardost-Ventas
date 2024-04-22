@@ -34,15 +34,26 @@ function cargarFavoritos() {
 function eliminarFavorito(index) {
     favprod.splice(index, 1)
     localStorage.setItem("fav", JSON.stringify(favprod))
+    Toastify({
+        text: "Producto Eliminado",
+        duration: 2000,
+        gravity: "top",
+        stopOnFocus: false
+        }).showToast();
     cargarFavoritos()
 }
 
 function agregarCarrito(index) {
-    alert("Se añadio el producto al carrito")
     const favorito = favprod[index]
     cart.push(favorito)
     let cartJSON = JSON.stringify(cart)
     localStorage.setItem("cart", cartJSON)
+    Toastify({
+        text: "Producto añadido al carrito",
+        duration: 2000,
+        gravity: "top",
+        stopOnFocus: false
+        }).showToast();
 }
 
 cargarFavoritos()

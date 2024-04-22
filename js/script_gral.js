@@ -179,7 +179,12 @@ function agregarCarrito(index) {
     cart.push(cartItem)
     let cartJSON = JSON.stringify(cart)
     localStorage.setItem("cart", cartJSON)
-    alert("El producto ha sido añadido al carrito.")
+    Toastify({
+        text: "Producto añadido al carrito",
+        duration: 3000,
+        gravity: "top",
+        stopOnFocus: false
+        }).showToast();
 }
 
 function agregarFavorito(index) {
@@ -189,7 +194,12 @@ function agregarFavorito(index) {
     fav.push(favItem)
     let favJSON = JSON.stringify(fav)
     localStorage.setItem("fav", favJSON)
-    alert("El producto ha sido añadido a favoritos.")
+    Toastify({
+        text: "Producto añadido favoritos",
+        duration: 3000,
+        gravity: "top",
+        stopOnFocus: false
+        }).showToast();    
 }
 
 const botonComprar = document.querySelectorAll(".btn-comp")

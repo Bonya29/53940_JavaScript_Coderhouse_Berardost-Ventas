@@ -67,7 +67,14 @@ function cerrarSesion() {
         localStorage.removeItem("sesionIniciada")
         sesionIniciada = false
         localStorage.setItem("sesionIniciada", sesionIniciada)
-        location.reload()
+        Swal.fire({
+            title: "Se ha cerrado la sesión.",
+            icon: "info"
+        })
+        .then(() => {
+            location.reload()
+        })
+        
     })
 }
 
@@ -80,23 +87,35 @@ function guardarDatos() {
     const regPassword = document.getElementById("reg-pass").value
     let verification = parseInt(regBirthYear)
     if (!regUser || !regEmail || !regBirthYear || !regDocument || !regPassword) {
-        alert("Completa todos los campos marcados con *")
-    } else if (2024 - verification >= 18) {
-        let usuarios = []
-        let datos = {Nombre: regUser, Email: regEmail, Telefono: regTelephone, Nacimiento: verification, Documento: regDocument, Contraseña: regPassword}
-        usuarios.push(datos)
-        let UsuariosJSON = JSON.stringify(usuarios)
-        localStorage.setItem("UsuariosCreados", UsuariosJSON)
-        alert("Cuenta creada, ahora puedes iniciar sesión en tu nueva cuenta")
-        iniciarSesion()
-    } else {
-        alert("Lo sentimos, no tienes la edad suficiente para crearte una cuenta.")
+        Swal.fire({
+            title: "Faltan Datos.",
+            text: "Completa todos los campos marcados con *",
+            icon: "warning"
+        })
+    } else if (2024 - verification < 18) {
+        Swal.fire({
+            title: "Edad Insuficiente.",
+            text: "Lo sentimos, no tienes la edad suficiente para crear una cuenta.",
+            icon: "error"
+        })
         document.getElementById("reg-name").value = ""
         document.getElementById("reg-email").value = ""
         document.getElementById("reg-tel").value = ""
         document.getElementById("reg-byear").value = ""
         document.getElementById("reg-document").value = ""
         document.getElementById("reg-pass").value = ""
+    } else {
+        let usuarios = []
+        let datos = {Nombre: regUser, Email: regEmail, Telefono: regTelephone, Nacimiento: verification, Documento: regDocument, Contraseña: regPassword}
+        usuarios.push(datos)
+        let UsuariosJSON = JSON.stringify(usuarios)
+        localStorage.setItem("UsuariosCreados", UsuariosJSON)
+        Swal.fire({
+            title: "Cuenta Creada.",
+            text: "Ahora puede iniciar sesión en tu nueva cuenta.",
+            icon: "success"
+        })
+        iniciarSesion()
     }        
 }
 
@@ -111,9 +130,17 @@ function validarDatos() {
         localStorage.removeItem("sesionIniciada")
         sesionIniciada = true
         localStorage.setItem("sesionIniciada", sesionIniciada)
+        Swal.fire({
+            title: "Sesión iniciada exitosamente.",
+            icon: "success"
+        })
         cerrarSesion()
     } else {
-        alert("El usuario no existe o la contraseña es incorrecta.")
+        Swal.fire({
+            title: "Datos Incorrectos.",
+            text: "El usuario no existe o los datos ingresados son incorrectos.",
+            icon: "error"
+        })
         document.getElementById("login-name").value = ""
         document.getElementById("login-pass").value = ""
     }
