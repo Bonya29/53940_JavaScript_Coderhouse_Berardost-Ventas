@@ -1,5 +1,4 @@
 const cartprod = JSON.parse(localStorage.getItem("cart")) || []
-let sesionIniciadaLS = localStorage.getItem("sesionIniciada")
 
 function cargarCarrito() {
     const carrito = document.getElementById("carrito")
@@ -73,6 +72,7 @@ function realizarCompra() {
     const num = document.getElementById("num").value
     const exp = document.getElementById("exp").value
     const ccv = document.getElementById("ccv").value
+    let sesionIniciadaLS = localStorage.getItem("sesionIniciada") || "false"
 
     if (cartprod.length === 0) {
         Swal.fire({

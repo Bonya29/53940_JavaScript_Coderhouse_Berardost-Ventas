@@ -162,6 +162,13 @@ h1{
     column-gap: 10.8rem;
 }
 
+.back {
+    font-size: 1.25rem;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .first-div-login{
     text-align: center;
     h1{

@@ -12,7 +12,7 @@ function iniciarSesion() {
     loginMain.innerHTML = `
         <div class="first-div-login">
             <h1>Inicia Sesión</h1>
-            <a href="">Volver Atras</a>
+            <a href="" class="back">Volver Atras</a>
         </div>
         <div class="login-register" style="flex-direction: column;">
             <input type="text" placeholder="Nombre y Apellido" id="login-name">
@@ -31,7 +31,7 @@ function registrarse() {
     loginMain.innerHTML = `
         <div class="first-div-login">
             <h1>Crea una Cuenta</h1>
-            <a href="">Volver Atras</a>
+            <a href="" class="back">Volver Atras</a>
         </div>
         <div class="login-register" style="flex-direction: column;">
             <input type="text" placeholder="Nombre y Apellido*" id="reg-name">
@@ -126,7 +126,13 @@ function validarDatos() {
     const UsuariosCreados = JSON.parse(localStorage.getItem("UsuariosCreados")) || []
     let userFound = UsuariosCreados.find(usuario => usuario.Nombre === user && usuario.Contraseña === password)
 
-    if (userFound) {
+    if (!user || !password) {
+        Swal.fire({
+            title: "Faltan Datos.",
+            text: "Completa todos los campos.",
+            icon: "warning"
+        })
+    } else if (userFound) {
         localStorage.removeItem("sesionIniciada")
         sesionIniciada = true
         localStorage.setItem("sesionIniciada", sesionIniciada)
