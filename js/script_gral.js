@@ -3,7 +3,7 @@ let fav = JSON.parse(localStorage.getItem("fav")) || []
 
 function mostrarProductos(){
     const prodCont = document.getElementById("prod-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         data.forEach(producto => {
@@ -22,7 +22,7 @@ function mostrarProductos(){
 
 function mostrarTeclados() {
     const tecCont = document.getElementById("tec-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const tecFilter = data.filter(producto => producto.Categoria === "Teclado")
@@ -43,7 +43,7 @@ function mostrarTeclados() {
 
 function mostrarMouses() {
     const mouseCont = document.getElementById("mouse-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const mouseFilter = data.filter(producto => producto.Categoria === "Mouse")
@@ -64,7 +64,7 @@ function mostrarMouses() {
 
 function mostrarAuriculares() {
     const aurCont = document.getElementById("aur-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const aurFilter = data.filter(producto => producto.Categoria === "Auriculares")
@@ -85,7 +85,7 @@ function mostrarAuriculares() {
 
 function mostrarMonitores() {
     const monCont = document.getElementById("mon-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const monFilter = data.filter(producto => producto.Categoria === "Monitor")
@@ -106,7 +106,7 @@ function mostrarMonitores() {
 
 function mostrarRAM() {
     const ramCont = document.getElementById("ram-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const ramFilter = data.filter(producto => producto.Categoria === "Memoria RAM")
@@ -127,7 +127,7 @@ function mostrarRAM() {
 
 function mostrarAlmacenamiento() {
     const almCont = document.getElementById("alm-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const almFilter = data.filter(producto => producto.Tipo === "Almacenamiento")
@@ -148,7 +148,7 @@ function mostrarAlmacenamiento() {
 
 function mostrarGraficas() {
     const grafCont = document.getElementById("graf-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const grafFilter = data.filter(producto => producto.Categoria === "Placa de Video")
@@ -169,7 +169,7 @@ function mostrarGraficas() {
 
 function mostrarMotherboards() {
     const motherCont = document.getElementById("mother-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const motherFilter = data.filter(producto => producto.Categoria === "Motherboard")
@@ -190,7 +190,7 @@ function mostrarMotherboards() {
 
 function mostrarProcesadores() {
     const procCont = document.getElementById("proc-cont")
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const procFilter = data.filter(producto => producto.Categoria === "Procesador")
@@ -234,7 +234,7 @@ function comprobarId() {
 }
 
 function agregarCarrito(index) {
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const producto = data[index]
@@ -253,7 +253,7 @@ function agregarCarrito(index) {
 }
 
 function agregarFavorito(index) {
-    fetch('../productos.json')
+    fetch('/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         const producto = data[index]
