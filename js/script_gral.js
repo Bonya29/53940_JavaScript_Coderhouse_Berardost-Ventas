@@ -1,7 +1,6 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 let fav = JSON.parse(localStorage.getItem("fav")) || []
 
-
 function mostrarProductos(){
     const prodCont = document.getElementById("prod-cont")
     fetch('https://raw.githubusercontent.com/Bonya29/53940_JavaScript_Coderhouse_Berardost-Ventas/main/data/productos.json')
@@ -210,26 +209,37 @@ function mostrarProcesadores() {
     })
 }
 
+let ind = 0
 function comprobarId() {
     if (document.getElementById("prod-cont")) {
+        ind = 0
         mostrarProductos()
     } else if (document.getElementById("tec-cont")) {
+        ind = 0
         mostrarTeclados()
     } else if (document.getElementById("mouse-cont")) {
+        ind = 3
         mostrarMouses()
     } else if (document.getElementById("aur-cont")) {
+        ind = 6
         mostrarAuriculares()
     } else if (document.getElementById("mon-cont")) {
+        ind = 9
         mostrarMonitores()
     } else if (document.getElementById("ram-cont")) {
+        ind = 12
         mostrarRAM()
     } else if (document.getElementById("alm-cont")) {
+        ind = 15
         mostrarAlmacenamiento()
     } else if (document.getElementById("graf-cont")) {
+        ind = 18
         mostrarGraficas()
     } else if (document.getElementById("mother-cont")) {
+        ind = 21
         mostrarMotherboards()
     } else if (document.getElementById("proc-cont")) {
+        ind = 24
         mostrarProcesadores()
     }
 }
@@ -238,7 +248,7 @@ function agregarCarrito(index) {
     fetch('https://raw.githubusercontent.com/Bonya29/53940_JavaScript_Coderhouse_Berardost-Ventas/main/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
-        const producto = data[index]
+        const producto = data[index + ind]
         const {Categoria, Fabricante, Modelo, Precio, Cantidad} = producto
         const cartItem = {Categoria, Fabricante, Modelo, Precio, Cantidad}
         cart.push(cartItem)
@@ -257,7 +267,7 @@ function agregarFavorito(index) {
     fetch('https://raw.githubusercontent.com/Bonya29/53940_JavaScript_Coderhouse_Berardost-Ventas/main/data/productos.json')
     .then((resp) => resp.json())
     .then((data) => {
-        const producto = data[index]
+        const producto = data[index + ind]
         const {Categoria, Fabricante, Modelo, Precio, Cantidad} = producto
         const favItem = {Categoria, Fabricante, Modelo, Precio, Cantidad} 
         fav.push(favItem)

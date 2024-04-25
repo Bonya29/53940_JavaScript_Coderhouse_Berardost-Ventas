@@ -1,5 +1,5 @@
 const favprod = JSON.parse(localStorage.getItem("fav")) || []
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cart = JSON.parse(localStorage.getItem('cart')) || []
 
 function cargarFavoritos() {
     const favoritos = document.getElementById("favoritos")
@@ -26,7 +26,7 @@ function cargarFavoritos() {
     botonAdd.forEach(boton => {
         boton.addEventListener("click", function() {
             const index = parseInt(this.getAttribute("data-index"))
-            agregarCarrito(index);
+            agregarCarrito(index)
         })
     })
 }
@@ -39,7 +39,7 @@ function eliminarFavorito(index) {
         duration: 2000,
         gravity: "top",
         stopOnFocus: false
-        }).showToast();
+        }).showToast()
     cargarFavoritos()
 }
 
@@ -53,7 +53,7 @@ function agregarCarrito(index) {
         duration: 2000,
         gravity: "top",
         stopOnFocus: false
-        }).showToast();
+        }).showToast()
 }
 
 cargarFavoritos()

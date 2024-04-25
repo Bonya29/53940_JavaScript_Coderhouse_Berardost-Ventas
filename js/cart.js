@@ -53,7 +53,7 @@ function cargarCarrito() {
                     duration: 2000,
                     gravity: "bottom",
                     stopOnFocus: false
-                    }).showToast();
+                    }).showToast()
             } else {
                 cartprod[index].Cantidad--
                 localStorage.setItem("cart", JSON.stringify(cartprod))
@@ -113,21 +113,21 @@ function eliminarCarrito(index) {
         duration: 2000,
         gravity: "bottom",
         stopOnFocus: false
-        }).showToast();
+        }).showToast()
     cargarCarrito()
 }
 
 const botonSumar = document.querySelectorAll("sumar")
 botonSumar.forEach((boton, index) => {
     boton.addEventListener("click", () => {
-        sumar(index);
+        sumar(index)
     })
 })
 
 const botonRestar = document.querySelectorAll("restar")
 botonRestar.forEach((boton, index) => {
     boton.addEventListener("click", () => {
-        restar(index);
+        restar(index)
     })
 })
 
